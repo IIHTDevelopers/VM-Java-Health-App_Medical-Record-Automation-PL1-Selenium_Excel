@@ -1,22 +1,28 @@
 package pages;
 
-import java.io.File;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 public class medicalRecord_page extends StartupPage {
-	
+
+	public By getUsernameTextfieldLocator() {
+		return By.id("  ");
+	}
+
+	public By getPasswordTextboxLocator() {
+		return By.xpath("  ");
+	}
+
+	public By getSignInButtonLocator() {
+		return By.xpath("  ");
+	}
+
+	public By getMedicalRecordLocator() {
+		return By.xpath("  ");
+	}
+
 	public By getPageBarFixedLocator(String navBarName) {
 		if (navBarName.equalsIgnoreCase("mr outpatient list")) {
 			navBarName = "MR Outpatient List";
@@ -34,16 +40,222 @@ public class medicalRecord_page extends StartupPage {
 		return By.xpath("  ");
 
 	}
-	
+
+	public By calendarFromDropdown() {
+		return By.xpath("  ");
+	}
+
+	public By calendarToDropdown() {
+		return By.xpath("  ");
+	}
+
+	public By getButtonLocatorsBytext(String buttonName) {
+		return By.xpath("  ");
+	}
+
+	public By searchBarId() {
+		return By.id("  ");
+	}
+
+	public By getStarIconLocator() {
+		return By.xpath("  ");
+	}
+
 	public By getAnchorTagLocatorByText(String anchorTagName) {
+		return By.xpath("  ");
+	}
+
+	public By getRowsOfResult() {
+		return By.xpath("  ");
+	}
+
+	public By getActualAppointmentDates() {
+		return By.xpath("  ");
+	}
+
+	public By getDateRangeButton() {
+		return By.cssSelector("  ");
+	}
+
+	public By getDoctorFilterField() {
+		return By.xpath("  ");
+	}
+
+	public By getDepartmentFilterDropdown() {
+		return By.cssSelector("  ");
+	}
+
+	public By getActualDoctorsInResult() {
+		return By.xpath("  ");
+	}
+
+	public By getActualDepartmentsInResult() {
+		return By.xpath("  ");
+	}
+
+	public By getDoctorNameOptionInFilter(String doctorName) {
+		return By.xpath("  ");
+	}
+
+	public By getDoctorFilterDropdownLocator() {
+		return By.xpath("  ");
+	}
+
+	public By getDepartmentFilterDropdownLocator() {
+		return By.xpath("  ");
+	}
+
+	public By getDiagnosisDropdownLocator() {
+		return By.cssSelector("  ");
+	}
+
+	public By getDiagnosisCheckBoxIsSelectedLocator() {
+		return By.xpath("  ");
+	}
+
+	public By getDiagnosisPendingCheckBoxIsSelectedLocator() {
+		return By.xpath("  ");
+	}
+
+	public By getDiseaseCategoryDropdownLocator() {
+		return By.xpath("  ");
+	}
+
+	public By getAllCheckBoxIsSelectedLocator() {
+		return By.xpath("  ");
+	}
+
+	public By getCurrentPage() {
+		return By.xpath("  ");
+	}
+
+	public By getInpatientSeviceRequest() {
+		return By.cssSelector("  ");
+	}
+
+	public By getBirthDetailsHeading() {
+		return By.xpath("  ");
+	}
+
+	public By getPopUpMessageText(String msgStatus, String messageText) {
+		return By.xpath("  ");
+	}
+
+	public By popupCloseButton() {
+		return By.cssSelector("  ");
+	}
+
+	public By getCertificateButtonLocator(String patientName) {
+		return By.xpath("  ");
+	}
+
+	public By getBirthCertificateModalHeading() {
+		return By.cssSelector("   ");
+	}
+
+	public By getLocatorById(String id) {
+		return By.id(null);
+	}
+
+	public By getBirthListTableLocator() {
+		return By.xpath("  ");
+	}
+
+	public By getFinalDiagTextLocator() {
+		return By.xpath("  ");
+	}
+
+	public By getAddFinalDiagnosisButtonForPatient(String patientName) {
 		return By.xpath(" ");
 	}
 
+	public By getAddFinalDiagnosisModalCancelButton() {
+		return By.xpath("  ");
+	}
+
+	public By getEditFinalDiagnosisButtonForPatient(String patientName) {
+		return By.xpath("  ");
+	}
+
+	public By getDiagnosisDropdownLocatorInModal() {
+		return By.xpath("  ");
+	}
+
+	public By favouriteOrStarIconMedicalRecord() {
+		return By.xpath("  ");
+	}
+
+	public By getAppointmentTabLocator() {
+		return By.xpath("  ");
+	}
+
+	public By getCounters() {
+		return By.xpath("  ");
+	}
+
+	public By getNewPatientFirstNameField() {
+		return By.xpath("  ");
+	}
+
+	public By getNewPatientLastNameField() {
+		return By.xpath("  ");
+	}
+
+	public By getReligionSelectDropdown() {
+		return By.xpath("  ");
+	}
+
+	public By getAgeFieldInModal() {
+		return By.xpath("  ");
+	}
+
+	public By getGenderSelectDropdown() {
+		return By.xpath("  ");
+	}
+
+	public By getPhoneNumberField() {
+		return By.xpath("  ");
+	}
+
+	public By getDoctorFieldInModal() {
+		return By.xpath("  ");
+	}
+
+	public By getBillReceipt() {
+		return By.xpath("  ");
+	}
+
+	public By getAllRows() {
+		return By.xpath("  ");
+	}
+
+	public By getPrintInvoiceButton() {
+		return By.xpath("  ");
+	}
+
+	public By getPatientNameInOutPatientByIndex(int index) {
+		return By.xpath("  ");
+	}
+
+	public By getDepartmentInOutPatientByIndex(int index) {
+		return By.xpath("  ");
+	}
+
+	public By getDoctorNameInOutPatientByIndex(int index) {
+		return By.xpath("  ");
+	}
+
+	public By getAddFinalDiagLocator() {
+		return By.xpath("  ");
+	}
+
+	public By getEditFinalDiagLocator() {
+		return By.xpath("  ");
+	}
 
 	public medicalRecord_page(WebDriver driver) {
 		super(driver);
 	}
-
 
 	/**
 	 * @Test1.1 about this method loginTohealthAppByGivenValidCredetial()
