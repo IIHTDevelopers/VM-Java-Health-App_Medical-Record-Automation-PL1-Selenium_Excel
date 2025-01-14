@@ -338,7 +338,7 @@ public class medicalRecord_page extends StartupPage {
 	}
 
 	/**
-	 * @Test4.2 @Test7.2 @Test11.1 @Test14.1 @Test15.1 about this method
+	 * @Test4.2 @Test7.2 @Test11.1 about this method
 	 * applyDateFilter()
 	 * 
 	 * @param : String, String
@@ -551,59 +551,6 @@ public class medicalRecord_page extends StartupPage {
 	public boolean verifyDataIsFilteredAccordingToSelectedDiagnosis(String diagCode, String expectedFinalDiagvalue) {
 		return false;
 		
-	}
-
-	/**
-	 * @Test13 about this method verifyDiagnosisAddedCheckboxFunctionality()
-	 * 
-	 * @param diagCode               : String - The diagnosis code to be selected
-	 *                               and filtered.
-	 * @param expectedFinalDiagvalue : String - The expected final diagnosis value
-	 *                               that should be present after filtering.
-	 * @description : This method verifies that the data in the MR Inpatient and MR
-	 *              Outpatient lists is correctly filtered according to the selected
-	 *              diagnosis code.
-	 * @return : boolean - Returns true if the data is filtered correctly, otherwise
-	 *         false.
-	 * @throws : Exception - If any issue occurs during the filtering process.
-	 * @author : YAKSHA
-	 */
-	public boolean verifyDiagnosisAddedCheckboxFunctionality(String expectedBtnName) {
-		return false;	
-		
-	}
-
-	/**
-	 * @Test14.2 about this method
-	 * clickAddFinalDiadnosisAndVerifyModalOpensAndCloseIt()
-	 * 
-	 * @param null
-	 * @description : This method clicks on the Add Diadnosis button, verifies that
-	 *              the Add Final Diagnosis modal is open and closes it
-	 * @return : boolean - Returns true if the modal is visible and false if it is
-	 *         not
-	 * @throws : Exception - If there is an issue finding the button or the modal
-	 * @author : YAKSHA
-	 */
-	public boolean clickAddFinalDiadnosisAndVerifyModalOpensAndCloseIt() throws Exception {
-		return false;
-		
-	}
-
-	/**
-	 * @Test15.2 about this method
-	 * clickEditFinalDiadnosisAndVerifyModalOpensAndCloseIt()
-	 * 
-	 * @param null
-	 * @description : This method clicks on the Edit Diadnosis button, verifies that
-	 *              the Edit Final Diagnosis modal is open and closes it
-	 * @return : boolean - Returns true if the modal is visible and false if it is
-	 *         not
-	 * @throws : Exception - If there is an issue finding the button or the modal
-	 * @author : YAKSHA
-	 */
-	public boolean clickEditFinalDiadnosisAndVerifyModalOpensAndCloseIt() throws Exception {
-		return false;
 	}
 
 	
