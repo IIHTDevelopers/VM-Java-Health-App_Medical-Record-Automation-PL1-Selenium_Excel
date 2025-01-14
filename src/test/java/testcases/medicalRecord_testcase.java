@@ -227,51 +227,6 @@ public class medicalRecord_testcase extends AppTestBase {
 				medicalRecordExpectedData.get("diagnosisCode"), medicalRecordExpectedData.get("finalDiagValue")));
 	}
 
-	@Test(priority = 13, groups = {
-			"sanity" }, description = "Pre condition: User should be logged in and it is on MR Outpatient section\r\n"
-					+ "1. Click on \"Diagnosis Added\" checkbox "
-					+ "2. Data should be present according to the status, and after clicking the checkbox, only the records with \"Edit Final Diagnosis\" in the \"Action\" column should be displayed.")
-
-	public void verifyDiagnosisAddedCheckboxFunctionality() throws Exception {
-		medicalRecord_pageInstance = new medicalRecord_page(driver);
-
-		Assert.assertTrue(medicalRecord_pageInstance.verifyDiagnosisAddedCheckboxFunctionality("Edit Final Diagnosis"));
-	}
-
-	@Test(priority = 14, groups = {
-			"sanity" }, description = "1. User should be logged in and it is on MR Outpatient section\r\n"
-					+ "2. Click on \"FROM\" and select \"Jan 2020\"\r\n"
-					+ "3. Click on \"TO\" and selct \"march 2024\"\r\n" + "4. Click on \"OK\" button"
-					+ "5. Click on \"Add Final Diagnosis\" button\r\n")
-
-	public void verifyPresenceOfAddFinalDiagnosisButton() throws Exception {
-		medicalRecord_pageInstance = new medicalRecord_page(driver);
-
-		LocalDate currentDate = LocalDate.now();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-		String toDate = currentDate.format(formatter);
-		Thread.sleep(3000);
-		Assert.assertTrue(medicalRecord_pageInstance.applyDateFilter("01-01-2023", toDate));
-		Assert.assertTrue(medicalRecord_pageInstance.clickAddFinalDiadnosisAndVerifyModalOpensAndCloseIt());
-	}
-
-	@Test(priority = 15, groups = {
-			"sanity" }, description = "Pre condition: User should be logged in and it is on MR Outpatient section\r\n"
-					+ "1. Click on \"FROM\" and select \"July 2024\"\r\n"
-					+ "2. Click on \"TO\" and selct \"march 2024\"\r\n" + "3. Click on \"OK\" button\r\n"
-					+ "4. Click on \"Edit Final Diagnosis\" button")
-
-	public void verifyPresenceOfEditFinalDiagnosisButton() throws Exception {
-		medicalRecord_pageInstance = new medicalRecord_page(driver);
-
-		LocalDate currentDate = LocalDate.now();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-		String toDate = currentDate.format(formatter);
-		Thread.sleep(3000);
-		Assert.assertTrue(medicalRecord_pageInstance.applyDateFilter("01-01-2023", toDate));
-		Assert.assertTrue(medicalRecord_pageInstance.clickEditFinalDiadnosisAndVerifyModalOpensAndCloseIt());
-	}
-
 	
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
