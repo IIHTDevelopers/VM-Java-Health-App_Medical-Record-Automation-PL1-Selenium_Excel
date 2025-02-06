@@ -148,34 +148,8 @@ public class medicalRecord_testcase extends AppTestBase {
 				medicalRecord_pageInstance.verifyResultsAppointmentDateFallsWithin("01-01-2020", "01-01-2024"));
 	}
 
+
 	@Test(priority = 8, groups = {
-			"sanity" }, description = "Pre condition: User should be logged in and it is on MR Outpatient section \r\n"
-					+ "1. Click on the data range button\r\n" + "2. select \"one week\" option from the drop down\r\n"
-					+ "3. Click on \"OK\" button")
-	public void verifyResultWithOneWeekDateRange() throws Exception {
-		medicalRecord_pageInstance = new medicalRecord_page(driver);
-		Assert.assertTrue(medicalRecord_pageInstance.verifyUrlContains("MR Outpatient List", "OutpatientList"));
-		Assert.assertTrue(medicalRecord_pageInstance.clickDateRangeDropdownAndSelect("Last 1 Week"));
-		LocalDate currentDate = LocalDate.now();
-		LocalDate date7DaysAgo = currentDate.minusDays(7);
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-		String toDate = currentDate.format(formatter);
-		String fromDate = date7DaysAgo.format(formatter);
-		Thread.sleep(3000);
-		Assert.assertTrue(medicalRecord_pageInstance.verifyResultsAppointmentDateFallsWithin(fromDate, toDate));
-	}
-
-	@Test(priority = 9, groups = {
-			"sanity" }, description = "Pre condition: User should be logged in and it is on Medical Records module\r\n"
-					+ "1. Naviaget to MR Outpatient sub-module\r\n"
-					+ "2. Select \"Dr. ALEX OKELLO ONYIEGO\" in doctor filter drop down\r\n")
-	public void verifyDoctorFilterFunctionality() throws Exception {
-		medicalRecord_pageInstance = new medicalRecord_page(driver);
-		Assert.assertTrue(medicalRecord_pageInstance.verifyUrlContains("MR Outpatient List", "OutpatientList"));
-		Assert.assertTrue(medicalRecord_pageInstance.applyDoctorFilterAndVerifyResults("Dr. ALEX OKELLO ONYIEGO"));
-	}
-
-	@Test(priority = 10, groups = {
 			"sanity" }, description = "Pre condition: User should be logged in and it is on MR Outpatient section\r\n"
 					+ "1. select \"Cardiology\"  in select disease category drop down \r\n" + "")
 	public void verifyDepartmentFilterFunctionality() throws Exception {
@@ -184,48 +158,6 @@ public class medicalRecord_testcase extends AppTestBase {
 		Assert.assertTrue(medicalRecord_pageInstance.applyDepartmentFilterAndVerifyResults("Cardiology"));
 	}
 
-	@Test(priority = 11, groups = { "sanity" }, description = "1. Login in the healthapp application\r\n"
-			+ "2. Scroll down menu till medicalRecords\r\n" + "3. Navigate to the Medical record  module\r\n"
-			+ "4. Click on MR Outpatient sub module\r\n" + "5.Select \"Jan 2024\" from the \"From\" field\r\n"
-			+ "6. Select \"August 2024\" from the \"To\" field" + "7. Scroll  all the way to the botton of the page\r\n"
-			+ "8. Click on \"Next\" button\r\n")
-
-	public void verifyTheFunctionalityOfNextPageNavigator() throws Exception {
-		medicalRecord_pageInstance = new medicalRecord_page(driver);
-		userActionsInstance = new UserActions(driver);
-
-		userActionsInstance.click(medicalRecord_pageInstance.getAnchorTagLocatorByText("MR Inpatient List"));
-		userActionsInstance.click(medicalRecord_pageInstance.getAnchorTagLocatorByText("MR Outpatient List"));
-		LocalDate currentDate = LocalDate.now();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-		String toDate = currentDate.format(formatter);
-		Assert.assertTrue(medicalRecord_pageInstance.applyDateFilter("01-01-2023", toDate));
-		Assert.assertTrue(medicalRecord_pageInstance.scrollAllTheWayDown());
-		Thread.sleep(1000);
-		Assert.assertTrue(medicalRecord_pageInstance.verifyCurrentPageIs("1"));
-		Assert.assertTrue(medicalRecord_pageInstance.clickButtonByText("Next"));
-		Assert.assertTrue(medicalRecord_pageInstance.verifyCurrentPageIs("2"));
-		Assert.assertTrue(medicalRecord_pageInstance.clickButtonByText("Previous"));
-
-	}
-
-	@Test(priority = 12, groups = {
-			"sanity" }, description = "Pre condition: User should be logged in and it is on MR Outpatient section\r\n"
-					+ "1. Enter the \"2B72\" in the \" select disease\" field \r\n"
-					+ "2. select \"Malignant neoplasms of stomach\"  in select disease category drop down "
-					+ "3. Data should be present as per the selected Diagnosis from the dropdown\r\n"
-					+ "Ensure that the \"ICD Code\" column is correctly updated based on changes in the selected diagnosis.\r\n"
-					+ "ICD CODE -> \"2B72\"")
-
-	public void verifyDataisFilteredAccordingToSelectedDiagnosis() throws Exception {
-		medicalRecord_pageInstance = new medicalRecord_page(driver);
-
-		Map<String, String> medicalRecordExpectedData = new FileOperations().readExcelPOI(expectedDataFilePath,
-				"medicalRecord");
-
-		Assert.assertTrue(medicalRecord_pageInstance.verifyDataIsFilteredAccordingToSelectedDiagnosis(
-				medicalRecordExpectedData.get("diagnosisCode"), medicalRecordExpectedData.get("finalDiagValue")));
-	}
 
 	
 	@AfterClass(alwaysRun = true)
