@@ -338,7 +338,7 @@ public class medicalRecord_page extends StartupPage {
 	}
 
 	/**
-	 * @Test4.2 @Test7.2 @Test11.1 about this method
+	 * @Test4.2 @Test7.2 about this method
 	 * applyDateFilter()
 	 * 
 	 * @param : String, String
@@ -370,7 +370,7 @@ public class medicalRecord_page extends StartupPage {
 	}
 
 	/**
-	 * @Test5 @Test6.1 @Test7.1 @Test8.1 @Test9.1 about this method
+	 * @Test5 @Test6.1 @Test7.1 about this method
 	 *        verifyUrlContains()
 	 * 
 	 * @param buttonName      : String - The name of the button that will be clicked
@@ -409,26 +409,10 @@ public class medicalRecord_page extends StartupPage {
 		
 	}
 
-	/**
-	 * @Test8.2 about this method clickDateRangeDropdownAndSelect()
-	 * 
-	 * @param valueToSelect : String - The text of the value to select from the
-	 *                      dropdown.
-	 * @description : This method clicks on the date range button, selects a value
-	 *              by its text, and verifies if the selection was successful.
-	 * @return : boolean - true if the intended value is successfully selected,
-	 *         otherwise false.
-	 * @throws : Exception - if there is an issue finding the dropdown or its
-	 *           values.
-	 * @author : YAKSHA
-	 */
-	public boolean clickDateRangeDropdownAndSelect(String valueToSelect) throws Exception {
-		return false;
-		
-	}
+	
 
 	/**
-	 * @Test7.3 @Test8.3 about this method verifyResultsAppointmentDateFallsWithin()
+	 * @Test7.3 about this method verifyResultsAppointmentDateFallsWithin()
 	 * 
 	 * @param fromDate : String - The starting date of the range in "dd-MM-yyyy"
 	 *                 format.
@@ -446,24 +430,10 @@ public class medicalRecord_page extends StartupPage {
 		return false;
 	}
 
-	/**
-	 * @Test9.2 about this method applyDoctorFilterAndVerifyResults()
-	 * 
-	 * @param doctorName : String - Name of the Doctor to filter by.
-	 * @description : This method applies a doctor filter by the specified name and
-	 *              verifies if the results contain only the selected doctor.
-	 * @return : boolean - true if all results contain the selected doctor's name,
-	 *         otherwise false.
-	 * @throws : Exception - if there is an issue finding the dropdown or its
-	 *           values.
-	 * @author : YAKSHA
-	 */
-	public boolean applyDoctorFilterAndVerifyResults(String doctorName) throws Exception {
-		return false;
-	}
+	
 
 	/**
-	 * @Test10 about this method applyDepartmentFilterAndVerifyResults()
+	 * @Test8 about this method applyDepartmentFilterAndVerifyResults()
 	 * 
 	 * @param departmentName - The name of the department to filter by.
 	 * @description : This method applies a department filter by department name and
@@ -475,80 +445,6 @@ public class medicalRecord_page extends StartupPage {
 	 * @author : YAKSHA
 	 */
 	public boolean applyDepartmentFilterAndVerifyResults(String departmentName) throws Exception {
-		return false;
-		
-	}
-
-	/**
-	 * @Test11.2 about this method scrollAllTheWayDown()
-	 * 
-	 * @param : null
-	 * @description : This method vertically scrolls the screen to the bottom
-	 * @return : boolean - true if successfully scrolled down and false if not
-	 *         scrolled
-	 * @throws : Exception - if there is an issue while scrolling
-	 * @author : YAKSHA
-	 */
-	public boolean scrollAllTheWayDown() throws Exception {
-		return false;
-		
-	}
-
-	/**
-	 * @Test11.4 @Test11.6 about this method clickButtonByText()
-	 * 
-	 * @param buttonText : String - The text of the button to be clicked
-	 * @description : This method locates a button using its text and performs a
-	 *              click action on it. If the button is found, it is highlighted
-	 *              before the click action. In case of failure (e.g., button not
-	 *              found or click error), an error message is printed and an
-	 *              exception is thrown.
-	 * @return : boolean - Returns true if the button is successfully clicked.
-	 * @throws : Exception - if there is an issue finding the button or performing
-	 *           the click action.
-	 * @author : YAKSHA
-	 */
-	public boolean clickButtonByText(String buttonText) throws Exception {
-		return false;
-		
-	}
-
-	/**
-	 * @Test11.3 @Test11.5 about this method verifyCurrentPageIs()
-	 * 
-	 * @param expectedCurrentPage : String - The expected text that should be
-	 *                            present on the current page to verify its
-	 *                            correctness.
-	 * @description : This method verifies whether the current page matches the
-	 *              expected page by checking the text of a specific element. If the
-	 *              text matches the expected value, the method returns true,
-	 *              otherwise it returns false.
-	 * @return : boolean - true if the current page matches the expected page, false
-	 *         otherwise.
-	 * @throws : Exception - if there is an issue finding the element or performing
-	 *           the text comparison.
-	 * @author : YAKSHA
-	 */
-	public boolean verifyCurrentPageIs(String expectedCurrentPage) throws Exception {
-		return false;	
-		
-	}
-
-	/**
-	 * @Test12 about this method verifyDataIsFilteredAccordingToSelectedDiagnosis()
-	 * 
-	 * @param diagCode               - The diagnosis code to filter the data.
-	 * @param expectedFinalDiagvalue - The expected final diagnosis value to verify
-	 *                               against.
-	 * @description : This method verifies that the data is filtered according to
-	 *              the selected diagnosis code.
-	 * @return : boolean - Returns true if the data is correctly filtered, otherwise
-	 *         false.
-	 * @throws : Exception - If there is an issue finding or interacting with
-	 *           elements, a meaningful error message is thrown.
-	 * @author : YAKSHA
-	 */
-	public boolean verifyDataIsFilteredAccordingToSelectedDiagnosis(String diagCode, String expectedFinalDiagvalue) {
 		return false;
 		
 	}
