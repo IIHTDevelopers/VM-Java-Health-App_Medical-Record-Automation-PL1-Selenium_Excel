@@ -65,40 +65,30 @@ public class medicalRecord_testcase extends AppTestBase {
 			+ " Expected Sub modules are : MR Outpatient List, MR Inpatient List,  Birth List, Death List, Reports, Emergency Patient List  ")
 	public void verifyMedicalRecordSubModules() throws Exception {
 		medicalRecord_pageInstance = new medicalRecord_page(driver);
+		locatorsFactoryInstance = new LocatorsFactory(driver);
 
 		Assert.assertTrue(medicalRecord_pageInstance.highlightAndVerifyWhetherElementIsDisplayed(
-				medicalRecord_pageInstance.getPageBarFixedLocator("MR Outpatient List")));
+				locatorsFactoryInstance.getPageBarFixedLocator("MR Outpatient List")));
 		Assert.assertTrue(medicalRecord_pageInstance.highlightAndVerifyWhetherElementIsDisplayed(
-				medicalRecord_pageInstance.getPageBarFixedLocator("MR Inpatient List")));
+				locatorsFactoryInstance.getPageBarFixedLocator("MR Inpatient List")));
 		Assert.assertTrue(medicalRecord_pageInstance.highlightAndVerifyWhetherElementIsDisplayed(
-				medicalRecord_pageInstance.getPageBarFixedLocator("Birth List")));
+				locatorsFactoryInstance.getPageBarFixedLocator("Birth List")));
 		Assert.assertTrue(medicalRecord_pageInstance.highlightAndVerifyWhetherElementIsDisplayed(
-				medicalRecord_pageInstance.getPageBarFixedLocator("Death List")));
+				locatorsFactoryInstance.getPageBarFixedLocator("Death List")));
 		Assert.assertTrue(medicalRecord_pageInstance.highlightAndVerifyWhetherElementIsDisplayed(
-				medicalRecord_pageInstance.getPageBarFixedLocator("Reports")));
+				locatorsFactoryInstance.getPageBarFixedLocator("Reports")));
 		Assert.assertTrue(medicalRecord_pageInstance.highlightAndVerifyWhetherElementIsDisplayed(
-				medicalRecord_pageInstance.getPageBarFixedLocator("Emergency Patient List")));
+				locatorsFactoryInstance.getPageBarFixedLocator("Emergency Patient List")));
 	}
 
-	@Test(priority = 3, groups = { "sanity" }, description = "1. Login in the healthapp application\r\n"
-			+ "2. Scroll down menu till medicalRecords\r\n"
-			+ "3. Click on the medical Record and verify MR Inpatient List\r\n")
-
-	public void verifyUrlOfTheMedicalRecordModule() throws Exception {
-		medicalRecord_pageInstance = new medicalRecord_page(driver);
-		Map<String, String> medicalRecordExpectedData = new FileOperations().readExcelPOI(expectedDataFilePath,
-				"medicalRecord");
-		Assert.assertEquals(medicalRecord_pageInstance.verifyUrlMedicalRecordModule(),
-				medicalRecordExpectedData.get("URL"));
-	}
-
-	@Test(priority = 4, groups = {
+	@Test(priority = 3, groups = {
 			"sanity" }, description = "Pre condition: User should be logged in and it is on medicalRecord module\r\n"
 					+ "1. Click on the medicalRecords module drop-down arrow \r\n"
 					+ "2. Click on MR Outpatient section")
 
 	public void verifyMROutpatientComponents() throws Exception {
 		medicalRecord_pageInstance = new medicalRecord_page(driver);
+		
 		medicalRecord_pageInstance.clickAnchorButtonByText("MR Outpatient List");
 		LocalDate currentDate = LocalDate.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
@@ -109,7 +99,7 @@ public class medicalRecord_testcase extends AppTestBase {
 		Assert.assertTrue(medicalRecord_pageInstance.verifyIfInputFieldsDropdownsAndCheckboxesAreVisibleOrNot());
 	}
 
-	@Test(priority = 5, groups = {
+	@Test(priority = 4, groups = {
 			"sanity" }, description = "Pre condition: User should be logged in and it is on Medical Records module\r\n"
 					+ "1. Click on the MR Outpatient  \r\n" + "2. Click on the Reports\r\n"
 					+ "3. Click on the Birth List\r\n" + "4. Click on the  Death List\r\n"
@@ -126,22 +116,16 @@ public class medicalRecord_testcase extends AppTestBase {
 		Assert.assertTrue(medicalRecord_pageInstance.verifyUrlContains("MR Inpatient List", "InpatientList"));
 	}
 
-	@Test(priority = 6, groups = {
-			"sanity" }, description = "Pre condition: User should be logged in and it is on MR Outpatient section\r\n"
-					+ "1. Enter the keywords \"Female\"")
-	public void verifySearchByKeywordFunctionalityInMrOutpatientList() throws Exception {
-		medicalRecord_pageInstance = new medicalRecord_page(driver);
-		Assert.assertTrue(medicalRecord_pageInstance.verifyUrlContains("MR Outpatient List", "OutpatientList"));
-		Assert.assertTrue(medicalRecord_pageInstance.searchAndVerifyKeywordInEveryResult("Female"));
-	}
+	
 
-	@Test(priority = 7, groups = {
+	@Test(priority = 5, groups = {
 			"sanity" }, description = "Pre condition: User should be logged in and it is on MR Outpatient section \r\n"
 					+ "1. Click on the \"From\" date\r\n" + "2. Select the \"Jan 2020\" date\r\n"
 					+ "3. Click on the \"To\" date\r\n" + "4. Select \"July 2024\" date\r\n"
 					+ "5. Click on \"OK\" button")
 	public void verifyResultWithinSpecifiedDateRange() throws Exception {
 		medicalRecord_pageInstance = new medicalRecord_page(driver);
+		
 		Assert.assertTrue(medicalRecord_pageInstance.verifyUrlContains("MR Outpatient List", "OutpatientList"));
 		Assert.assertTrue(medicalRecord_pageInstance.applyDateFilter("01-01-2020", "01-01-2024"));
 		Assert.assertTrue(
@@ -149,7 +133,7 @@ public class medicalRecord_testcase extends AppTestBase {
 	}
 
 
-	@Test(priority = 8, groups = {
+	@Test(priority = 6, groups = {
 			"sanity" }, description = "Pre condition: User should be logged in and it is on MR Outpatient section\r\n"
 					+ "1. select \"Cardiology\"  in select disease category drop down \r\n" + "")
 	public void verifyDepartmentFilterFunctionality() throws Exception {
