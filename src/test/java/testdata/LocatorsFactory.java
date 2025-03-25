@@ -13,6 +13,24 @@ public class LocatorsFactory extends UserActions {
 
 	UserActions userActions = new UserActions(driver);
 
+	public By getPageBarFixedLocator(String navBarName) {
+		if (navBarName.equalsIgnoreCase("mr outpatient list")) {
+			navBarName = "MR Outpatient List";
+		} else if (navBarName.equalsIgnoreCase("mr inpatient list")) {
+			navBarName = "MR Inpatient List";
+		} else if (navBarName.equalsIgnoreCase("birth list")) {
+			navBarName = "Birth List";
+		} else if (navBarName.equalsIgnoreCase("death list")) {
+			navBarName = "Death List";
+		} else if (navBarName.equalsIgnoreCase("reports")) {
+			navBarName = "Reports";
+		} else if (navBarName.equalsIgnoreCase("emergency patient list")) {
+			navBarName = "Emergency Patient List";
+		}
+		return By.xpath("//a[contains(text(),'" + navBarName + "')]");
+
+	}
+
 	// element of health application
 
 	By totalDoctortextElement = By.xpath("//p[contains(text(), 'Total Doctors')]");
