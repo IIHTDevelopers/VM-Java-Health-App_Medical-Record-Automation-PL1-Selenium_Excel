@@ -13,19 +13,26 @@ public class medicalRecord_page extends StartupPage {
 	public By getSignInButtonLocator = null;
 	public By getMedicalRecordLocator = null;
 //	TC-2 Locators
-	public By getAnchorTagLocatorByText = null;
+//	Write the required locators here
+//	TC-3 Locators	
+	public By getAnchorTagLocatorMROutpatientList = null;
 	public By calendarFromDropdown = null;
-	public By calendarToDropdown = null;	
-	public By getButtonLocatorsBytext = null;
+	public By calendarToDropdown = null;
 	public By searchBarId = null;
+	public By getButtonLocatorsFirst = null;
+	public By getButtonLocatorsPrevious = null;
+	public By getButtonLocatorsNext = null;
+	public By getButtonLocatorsLast = null;
 //	TC-4 Locators
-	public By getRowsOfResult = null;
+//	Write the required locators here
 //	TC-5 Locators
-	public By getActualAppointmentDates = null;
+	public By getRowsOfResult = null;
 //	TC-6 Locators
-	public By getDepartmentFilterDropdownLocator = null;
-	public By getDepartmentFilterDropdown = null;
+	public By getAnchorTagLocatorMRInpatientList = null;
+	public By getActualAppointmentDates = null;
+	public By getDepartmentFilterDropdown = null;	
 	public By getActualDepartmentsInResult = null;
+
 	
 	public medicalRecord_page(WebDriver driver) {
 		super(driver);
