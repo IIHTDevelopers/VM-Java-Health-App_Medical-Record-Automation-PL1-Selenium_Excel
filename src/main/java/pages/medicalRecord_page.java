@@ -24,11 +24,14 @@ public class medicalRecord_page extends StartupPage {
 	public By getButtonLocatorsNext = null;
 	public By getButtonLocatorsLast = null;
 //	TC-4 Locators
-//	Write the required locators here
+	public By getAnchorTagLocatorReports = null;
+	public By getAnchorTagLocatorBirthList = null;
+	public By getAnchorTagLocatorDeathList = null;
+	public By getAnchorTagLocatorEmergencyPatientList = null;
+	public By getAnchorTagLocatorMRInpatientList = null;
 //	TC-5 Locators
 	public By getRowsOfResult = null;
 //	TC-6 Locators
-	public By getAnchorTagLocatorMRInpatientList = null;
 	public By getActualAppointmentDates = null;
 	public By getDepartmentFilterDropdown = null;	
 	public By getActualDepartmentsInResult = null;
